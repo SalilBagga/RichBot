@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+      rel="stylesheet"
+      href="../public/normalize.min.css"
+    />
+    <link rel="stylesheet" href="../public/font.css" />
+    <link
+      rel="stylesheet"
+      href="../public/jquery.mCustomScrollbar.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../public/normalize.min.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="chat">
+      <div class="chat-title">
+        <h1>Bot</h1>
+        <figure class="avatar">
+          <img
+            src="../public/media/bot.jpg"
+          />
+        </figure>
+      </div>
+      <div class="messages">
+        <div class="messages-content"></div>
+        <div class="suggession"></div>
+      </div>
+
+      <form class="message-box" id="mymsg" method="POST">
+        <input
+          type="text"
+          id="MSG"
+          name="MSG"
+          class="message-input"
+          placeholder="Type message....."
+        />
+        <button type="submit" class="message-submit">Send</button>
+      </form>
+
+      <h3 class="no-browser-support" hidden>
+        Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.
+      </h3>
+    </div>
+    <div class="bg"></div>
+    <script src="../public/jquery.min.js"></script>
+    <script src="../public/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

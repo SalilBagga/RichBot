@@ -8,11 +8,18 @@ const port = process.env.PORT || 5000;
 // const app = express();
 const app = express();
 const sessionId = uuid.v4();
-app.use;
-express.static(__dirname + './src/index.html');
-app.get('/', (request, response) => {
-  response.sendFile(path.join(__dirname + './src/index.html'));
+const path = require('path');
+app.use(express.static('src'));
+// app.get('/', (request, response) => {
+//   console.log('habeeb');
+//   response.sendFile(path.join(__dirname + '/src/index.html'));
+// });
+const sessionClient = new dialogflow.SessionsClient({
+  keyFilename: './RichBot.json'
 });
+const projectId = 'richbot-hsdstx';
+const sessionPath = sessionClient.sessionPath(projectId, sessionId);
+
 app.use(
   bodyParser.urlencoded({
     extended: false
@@ -37,11 +44,7 @@ app.post('/send-msg', (req, res) => {
  * Send a query to the dialogflow agent, and return the query result.
  * @param {string} projectId The project to be used
  */
-async function runSample(msg, projectId = 'richbot-hsdstx') {
-  const sessionClient = new dialogflow.SessionsClient({
-    keyFilename: './RichBot.json'
-  });
-  const sessionPath = sessionClient.sessionPath(projectId, sessionId);
+async function runSample(msg) {
   const request = {
     session: sessionPath,
     queryInput: {
@@ -51,8 +54,11 @@ async function runSample(msg, projectId = 'richbot-hsdstx') {
       }
     }
   };
-  console.log(sessionId, projectId);
+  console.log('started');
+  console.time('detect');
   const responses = await sessionClient.detectIntent(request);
+  console.timeEnd('detect');
+
   console.log('Detected intent');
   // console.log(`%${JSON.stringify(responses.fulfillmentMessages)}%\n`);
   const result = responses[0].queryResult;

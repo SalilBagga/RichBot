@@ -1,30 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+      rel="stylesheet"
+      href="./css/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/font.css" />
+    <link
+      rel="stylesheet"
+      href="./css/jquery.mCustomScrollbar.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/normalize.min.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/chat.css">
-    <script src="js/chat.js"></script>
+  <body>
+    <div class="chat">
+      <div class="chat-title">
+        <h1>Bot</h1>
+        <figure class="avatar">
+          <img
+            src="media/bot.jpg"
+          />
+        </figure>
+      </div>
+      <div class="messages">
+        <div class="messages-content"></div>
+        <div class="suggession"></div>
+      </div>
 
-</head>
+      <form class="message-box" id="mymsg" method="POST">
+        <input
+          type="text"
+          id="MSG"
+          name="MSG"
+          class="message-input"
+          placeholder="Type message....."
+        />
+        <button type="submit" class="message-submit">Send</button>
+      </form>
 
-
-<body>
-    <div class="launcher" id="launch-button">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 20">
-            <path fill=""
-                d="M21.25 18.48V7.31a7.3 7.3 0 0 0-7.3-7.3H7.31a7.3 7.3 0 1 0 0 14.6h7.2s.58.04.93.17c.34.12.71.42.71.42l4.44 3.66s.4.34.55.27c.15-.07.11-.65.11-.65zM7.51 8.8c0 .49-.42.88-.95.88-.52 0-.95-.4-.95-.88V5.67c0-.49.43-.88.95-.88.53 0 .95.4.95.88V8.8zm4.07 1.48c0 .49-.43.88-.95.88s-.95-.39-.95-.88v-6.1c0-.48.43-.88.95-.88s.95.4.95.88v6.1zm4.06-1.48c0 .49-.42.88-.95.88-.52 0-.94-.4-.94-.88V5.67c0-.49.42-.88.94-.88.53 0 .95.4.95.88V8.8z">
-            </path>
-        </svg>
+      <h3 class="no-browser-support" hidden>
+        Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.
+      </h3>
     </div>
-    <div class="chatbox-container" id="chatbox">
-        <iframe allow="microphone;" width="340" height="400" frameborder="0" src="./index.html">
-        </iframe>
-    </div>
-    </div>
-</body>
-
+    <div class="bg"></div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
 </html>

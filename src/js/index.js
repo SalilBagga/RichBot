@@ -112,7 +112,7 @@ function serverMessage(response2) {
 
   $(`<div class="message loading new">
          <figure class="avatar">
-            <img src="../../public/media/bot.jpg" />
+            <img src="./media/bot.jpg" />
          </figure>
          <span></span>
       </div>`).appendTo($('.mCSB_container'));
@@ -121,7 +121,7 @@ function serverMessage(response2) {
     $('.message.loading').remove();
     $(`<div class="message new">
          <figure class="avatar">
-            <img src="../../public/media/bot.jpg" />
+            <img src="./media/bot.jpg" />
          </figure>
          ${result}
        `)

@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 const app = express();
 const sessionId = uuid.v4();
 app.use;
-express.static(__dirname + './src/chat.html');
+// express.static(__dirname + './src/chat.html');
 app.get('*', (request, response) => {
   response.sendFile(path.join(__dirname, 'client/build', 'chat.html'));
 });

@@ -141,7 +141,7 @@ function serverMessage(response2) {
 }
 
 function fetchmsg(msg) {
-  var url = 'http://localhost:5000/send-msg';
+  var url = '/send-msg';
   const data = new URLSearchParams();
   data.append('MSG', msg);
   console.log(data);

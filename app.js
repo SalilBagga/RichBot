@@ -54,10 +54,7 @@ async function runSample(msg) {
       }
     }
   };
-  console.log('started');
-  console.time('detect');
   const responses = await sessionClient.detectIntent(request);
-  console.timeEnd('detect');
 
   console.log('Detected intent');
   // console.log(`%${JSON.stringify(responses.fulfillmentMessages)}%\n`);
